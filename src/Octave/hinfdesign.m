@@ -50,8 +50,7 @@ warning('off','YALMIP:strict')
 PDs = [Lz'*Xp*Lz>0, Lf'*Xq*Lf>0, PIQ>0, h1g>0];
 %    
 % We must actively select SeDuMi as the solve Yalmip should use 
-%OPTIONS = sdpsettings('solver', 'sedumi','verbose',0);
-
+OPTIONS = sdpsettings('solver', 'sedumi','verbose',0);
 
 % % SeDuMi via Yalmip to solve SDP, minimizing for h
 solvesdp(PDs,h,OPTIONS);
